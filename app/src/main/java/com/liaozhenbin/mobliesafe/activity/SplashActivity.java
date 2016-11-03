@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -20,7 +19,7 @@ import com.liaozhenbin.mobliesafe.R;
 import com.liaozhenbin.mobliesafe.animation.MyAnimation;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
     private ImageView icon;
     private ImageView wallet;
@@ -117,7 +116,7 @@ public class SplashActivity extends AppCompatActivity {
 //        }.start();
 //    }
 
-    private void initUI() {
+    public void initUI() {
         icon = (ImageView) findViewById(R.id.iv_icon);
         wallet = (ImageView) findViewById(R.id.iv_wallet);
     }
@@ -126,8 +125,6 @@ public class SplashActivity extends AppCompatActivity {
     /**
      * start splash animation
      */
-
-
     private void startAnim() {
         startIcon();
         initWallet();
