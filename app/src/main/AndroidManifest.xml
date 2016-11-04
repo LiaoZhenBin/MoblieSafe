@@ -20,6 +20,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.IndexActivity"/>
+        <activity android:name=".activity.SpeedActivity"/>
+        <activity android:name=".activity.ClearStorageActivity"/>
+        <activity android:name=".activity.AutoActivity"/>
+        <activity android:name=".activity.FLowActivity"/>
+        <activity android:name=".activity.HarassActivity"/>
+        <activity android:name=".activity.SoftManagerActivity"/>
+
+        <activity android:name=".activity.AppLockActivity"/>
+        <activity android:name=".activity.VirusActivity"/>
+        <activity android:name=".activity.PermissionActivity"/>
+        <activity android:name=".activity.TheftActivity"/>
+        <activity android:name=".activity.PrivateActivity"/>
     </application>
 
 </manifest>

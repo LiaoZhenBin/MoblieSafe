@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.liaozhenbin.mobliesafe.R;
 import com.liaozhenbin.mobliesafe.adapter.IconAadapter;
+import com.liaozhenbin.mobliesafe.utils.ActivityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,10 @@ public class IndexActivity extends BaseActivity {
     private GridView gridView1;
     private ImageView icon_to0;
     private ImageView icon_from0;
+
+
+
+
     private ImageView icon_to1;
     private ImageView icon_from1;
     private int SIGN;
@@ -169,6 +174,9 @@ public class IndexActivity extends BaseActivity {
         gridView0.setOnItemLongClickListener(new MyLongClickListener(icon_from0, icon_to0));
         gridView1.setOnItemLongClickListener(new MyLongClickListener(icon_from1, icon_to1));
 
+        gridView0.setOnItemClickListener(new MyItemClickListener());
+        gridView1.setOnItemClickListener(new MyItemClickListener());
+
     }
 
     private void initFuncation() {
@@ -222,12 +230,12 @@ public class IndexActivity extends BaseActivity {
             view_from.setLayoutParams(params);
 
             TranslateAnimation translate = new TranslateAnimation(0, x1 - x0, 0, y1 - y0);
-            translate.setDuration(1000);
+            translate.setDuration(600);
             view_from.startAnimation(translate);
 
             //when the animation finish,invisible the icon;
             ValueAnimator animator = ValueAnimator.ofInt(0, 1);
-            animator.setDuration(1000);
+            animator.setDuration(600);
             animator.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) {
@@ -252,8 +260,15 @@ public class IndexActivity extends BaseActivity {
             animator.start();
 
             // Toast.makeText(IndexActivity.this, "x0:" + x0 + "x1:" + x1 + "y0:" + y0 + "y1:" + y1, Toast.LENGTH_SHORT).show();
-            return false;
+            return true;
         }
     }
 
+    private class MyItemClickListener implements AdapterView.OnItemClickListener{
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            ActivityUtil.startMyActivity(IndexActivity.this,SIGN,position);
+//            Toast.makeText(IndexActivity.this,SIGN+"---"+position,Toast.LENGTH_SHORT).show();
+        }
+    }
 }
