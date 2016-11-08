@@ -42,8 +42,6 @@ public class IndexActivity extends BaseActivity {
     private ImageView icon_from0;
 
 
-
-
     private ImageView icon_to1;
     private ImageView icon_from1;
     private int SIGN;
@@ -258,6 +256,7 @@ public class IndexActivity extends BaseActivity {
                 }
             });
             animator.start();
+
 
             // Toast.makeText(IndexActivity.this, "x0:" + x0 + "x1:" + x1 + "y0:" + y0 + "y1:" + y1, Toast.LENGTH_SHORT).show();
             return true;
